@@ -1,5 +1,4 @@
-// Displays Domain\Login name in IE for SharePoint 2013 Groups/Permissions pages
-//
+/* Displays Domain\Login name in IE for SharePoint 2013 Groups/Permissions pages */
 
 function copyInputText(e) {
 	var copyText;
