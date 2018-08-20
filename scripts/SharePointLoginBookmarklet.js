@@ -35,7 +35,7 @@ var vbIcon = document.querySelectorAll("td.ms-vb-icon");
 var aLinks = document.querySelectorAll("a[href*='userdisp.aspx']");
 var lookupLists = document.querySelectorAll("input[name='PrincipalId']");
 
-if (document.querySelectorAll("domainUserInput").length == 0) {
+if (document.querySelectorAll(".domainUserInput").length == 0) {
 	for (var i = 0; i < msAlt.length; i++) {
 		var key = msAlt[i].getAttribute("key");
 		if (key) {
