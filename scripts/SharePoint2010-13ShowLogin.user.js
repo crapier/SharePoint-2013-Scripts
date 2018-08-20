@@ -34,7 +34,7 @@
             var lookupLists = document.querySelectorAll("input[name='PrincipalId']");
 
 
-            if (document.querySelectorAll("domainUserInput").length == 0) {
+            if (document.querySelectorAll(".domainUserInput").length == 0) {
                 msAlt.forEach(function(node){
                     var key = node.getAttribute("key");
                     if (key) {
