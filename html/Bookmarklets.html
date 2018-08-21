@@ -12,15 +12,17 @@
     var bookmarklets = document.querySelectorAll(".bookmarklet");
     for (var i = 0; i < bookmarklets.length; i++) {
       var source_file = bookmarklets[i].getAttribute("source_file");
-      console.log(source_file);
-      function reqListener() {
-        var bookmarklet_href = "javascript:(function(){" + encodeURI(this.responseText) + "})()";
-        console.log(bookmarklet_href);
-        bookmarklets[i].href = bookmarklet_href;
+      
+      function reqListenerFactory(div) {
+        var reqListener = function() {
+          var bookmarklet_href = "javascript:(function(){" + encodeURI(this.responseText) + "})()";
+          div.href = bookmarklet_href;
+        }
+        return reqListener
       }
       
       var oReq = new XMLHttpRequest();
-      oReq.addEventListener("load", reqListener);
+      oReq.addEventListener("load", reqListenerFactory(bookmarklets[i]));
       oReq.open("GET", source_file);
       oReq.send();
     }
