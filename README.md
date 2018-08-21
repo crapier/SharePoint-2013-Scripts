@@ -1,5 +1,5 @@
 # SharePoint-2013-Scripts
-Various scripts for SharePoint 2013 
+Various scripts for SharePoint 2010/2013 
 ## Bookmarklets
 You can find various bookmarklet(s) for Internet Explorer [here](https://rawgit.com/crapier/SharePoint-2013-Scripts/master/html/Bookmarklets.html).
 ## Userscript
