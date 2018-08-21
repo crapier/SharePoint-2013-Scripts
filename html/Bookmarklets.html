@@ -1,0 +1,28 @@
+<html>
+<head>
+</head>
+<body>
+  <h1>Bookmarklets for SharePoint in IE</h1>
+  <p>Drag and drop bookmarks into you favorites bar<p>
+  <ul>
+    <li><a class="bookmarklet" source_file="https://rawgit.com/crapier/SharePoint-2013-Scripts/master/scripts/SharePointLoginBookmarklet.js" href="#">SPLogins</a></li>
+  </ul>
+  
+  <script>
+    var bookmarklets = document.querySelectorAll(".bookmarklet");
+    for (var i = 0; i < bookmarklets.length; i++) {
+      var source_file = bookmarklets[i].getAttribute("source_file");
+      
+      function reqListener() {
+        var bookmarklet_href = "javascript:(function(){" + encodeURI(this.responseText) + "})()";
+        bookmarklets[i].href = bookmarklet_href;
+      }
+      
+      var oReq = new XMLHttpRequest();
+      oReq.addEventListener("load", reqListener);
+      oReq.open("GET", source_file);
+      oReq.send();
+    }
+  </script>
+</body>
+</html>
